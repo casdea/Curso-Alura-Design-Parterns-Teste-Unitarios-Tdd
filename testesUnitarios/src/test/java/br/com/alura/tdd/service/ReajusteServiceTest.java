@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +22,11 @@ public class ReajusteServiceTest {
 	public void inicializar() {
 		service = new ReajusteService();
 		funcionario = new Funcionario("JOAO", LocalDate.now(), new BigDecimal("1000"));
+	}
+
+	@BeforeAll
+	public static void beforeAll() {
+		System.out.println("Antes de todos");
 	}
 
 	@Test
@@ -44,6 +51,11 @@ public class ReajusteServiceTest {
 		service.concederReajuste(funcionario, Desempenho.EXCELENTE);
 
 		assertEquals(new BigDecimal("1200.00"), funcionario.getSalario());
+	}
+
+	@AfterAll
+	public static void afterAll() {
+		System.out.println("Depois de todos");
 	}
 
 }
