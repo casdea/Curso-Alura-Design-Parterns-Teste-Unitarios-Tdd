@@ -1,14 +1,13 @@
 package br.com.alura.leilao.login;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import br.com.alura.leilao.leiloes.LeiloesPage;
 
 public class LoginPage {
 
@@ -55,17 +54,17 @@ public class LoginPage {
 		browser.findElement(By.id("password")).sendKeys(password);
 	}
 
-	public void efetuaLogin() {
+	public LeiloesPage efetuaLogin() {
 		browser.findElement(By.id("login-form")).submit();
-
+		return new LeiloesPage(browser);
 	}
 
 	public boolean isPaginaDeLogin() {
 		return browser.getCurrentUrl().equals(URL_LOGIN);
 	}
-	
+
 	public boolean isPaginaDeLoginComDadosInvalidos() {
-	    return browser.getCurrentUrl().equals(URL_LOGIN + "?error");
+		return browser.getCurrentUrl().equals(URL_LOGIN + "?error");
 	}
 
 	public Object getNomeUsuarioLogado() {
@@ -77,11 +76,11 @@ public class LoginPage {
 	}
 
 	public void navegaParaPaginaDeLances() {
-	    this.browser.navigate().to("http://localhost:8080/leiloes/2");
+		this.browser.navigate().to("http://localhost:8080/leiloes/2");
 	}
 
 	public boolean contemTexto(String texto) {
 		System.out.println(browser.getPageSource().toString());
-	    return browser.getPageSource().contains(texto);
+		return browser.getPageSource().contains(texto);
 	}
 }
