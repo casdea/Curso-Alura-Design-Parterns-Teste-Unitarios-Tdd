@@ -3,7 +3,6 @@ package br.com.alura.leilao.leiloes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LeiloesPage {
 
@@ -37,5 +36,10 @@ public class LeiloesPage {
 	    return colunaNome.getText().equals(nome)
 	            && colunaDataAbertura.getText().equals(data) 
 	            && colunaValorInicial.getText().equals(valor);
+	}
+
+	public boolean isPaginaAtual() {
+		// TODO Auto-generated method stub
+		 return browser.getCurrentUrl().equals(URL_LEILOES);
 	}
 }
