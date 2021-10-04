@@ -1,6 +1,6 @@
 # language: pt
 
-Funcionalidade: Propondo lances
+Funcionalidade: Propondo unico lance
 
 Cenario: Propondo um unico lance valido
  Dado um lance valido
