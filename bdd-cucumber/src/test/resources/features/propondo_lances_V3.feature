@@ -11,3 +11,9 @@ Cenario: Propondo um unico lance valido
    Dado varios lances validos 
    Quando propoe os lances ao leilao 
    Entao os lances sao aceitos
+   
+ Cenario: Propondo varios lances validos com variaveis
+   Dado um lance de 10.0 reais do usuario "fulano"
+   E um lance de 15.0 do usuario "beltrano" 
+   Quando propoe os lances ao leilao 
+   Entao os lances sao aceitos
