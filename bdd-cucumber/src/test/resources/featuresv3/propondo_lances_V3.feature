@@ -7,3 +7,4 @@ Cenario: Propondo varios lances validos com variaveis
    E um lance de 15.0 reais do usuario "beltrano" 
    Quando propoe os lances com variaveis ao leilao 
    Entao os lances com variaveis sao aceitos
+   
